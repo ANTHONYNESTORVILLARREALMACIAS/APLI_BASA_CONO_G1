@@ -69,7 +69,7 @@ nodo(dragon_trato_acepta, "Aceptas ayudar al dragon y te embarcas en una nueva a
 nodo(dragon_trato_lucha, "Decides luchar contra el dragon y, tras una ardua batalla, encuentras un misterioso huevo.", "huevo.jpg").
 nodo(huevo_cuida, "Decides cuidar el huevo y este se convierte en un dragon aliado que te acompaña.", "dragon_aliado.jpg").
 nodo(huevo_abandona, "Abandonas el huevo y sigues tu camino, pero un misterioso sentimiento de perdida te persigue.", "perdida.jpg").
-nodo(bosque_cabana, "Encuentras una cabaña oculta en medio del bosque. Adentro, hay un libro viejo en una mesa. Lo lees o lo dejas?", "cabana.jpg").
+nodo(bosque_cabana, "Encuentras una cabana oculta en medio del bosque. Adentro, hay un libro viejo en una mesa. Lo lees o lo dejas?", "cabana.jpg").
 nodo(cabana_lee, "El libro te cuenta historias del bosque y revela un hechizo protector. Decides usarlo?", "hechizo.jpg").
 nodo(cabana_deja, "Dejas el libro y continúas explorando. Pronto encuentras un puente colgante con musgo.", "puente_musgo.jpg").
 nodo(desfiladero_piedra, "Una piedra extraña en el camino comienza a brillar. La tocas o sigues tu camino?", "piedra_brillante.jpg").
@@ -149,7 +149,7 @@ nodo(aldea_silenciosa, "Llegas a una aldea silenciosa. Las casas parecen deshabi
 nodo(aldea_mercado, "Un pequeño mercado aún tiene puestos con mercancías cubiertas de polvo.", "mercado.jpg").
 nodo(aldea_criaturas, "Criaturas extrañas observan desde las sombras. Te ponen en alerta.", "criaturas.jpg").
 nodo(campo_florido, "Un campo lleno de flores se extiende hasta el horizonte.", "campo_flores.jpg").
-nodo(campo_oculto, "Descubres un camino oculto entre las flores que conduce a una cabaña.", "camino_flores.jpg").
+nodo(campo_oculto, "Descubres un camino oculto entre las flores que conduce a una cabana.", "camino_flores.jpg").
 nodo(campo_colmena, "Te acercas demasiado a una colmena gigante. Las abejas parecen agresivas.", "colmena.jpg").
 nodo(ruinas_olvidadas, "Encuentras ruinas de una civilización olvidada. Están llenas de jeroglíficos.", "ruinas.jpg").
 nodo(ruinas_misterio, "Un pedestal en las ruinas emite un leve resplandor.", "pedestal.jpg").
@@ -222,7 +222,7 @@ nodo(templo_fantasma, "Una figura espectral aparece, protegiendo los secretos de
 nodo(templo_camino_oculto, "Un camino oculto detrás de una estatua se abre con un mecanismo secreto.", "camino_oculto.jpg").
 nodo(isla_misterio, "La isla parece tener su propio clima y vegetación exótica.", "isla_misteriosa.jpg").
 nodo(isla_volcan, "Un volcán activo se alza en el centro de la isla.", "volcan.jpg").
-nodo(isla_cabaña, "Encuentras una cabaña hecha de madera y hojas, aparentemente habitada.", "cabaña.jpg").
+nodo(isla_cabana, "Encuentras una cabana hecha de madera y hojas, aparentemente habitada.", "cabana.jpg").
 nodo(bosque_claro, "Un claro en el bosque deja pasar la luz del sol, creando un ambiente mágico.", "claro.jpg").
 nodo(bosque_arbol_antiguo, "Un árbol inmenso y antiguo se alza, lleno de grabados extraños.", "arbol_antiguo.jpg").
 nodo(bosque_animales, "Te encuentras con un grupo de animales que parecen poco comunes.", "animales.jpg").
@@ -348,13 +348,13 @@ nodo(cueva_pinturas_ancestrales, "Paredes cubiertas de pinturas ancestrales cuen
 nodo(cueva_rio_subterraneo, "Un río subterráneo fluye con fuerza en la penumbra.", "rio_subterraneo.jpg").
 nodo(rio_puente_roto, "Un viejo puente de madera está roto en el centro.", "puente_roto.jpg").
 nodo(rio_pesca_abandonada, "Una caña de pescar abandonada está clavada en la tierra.", "pesca_abandonada.jpg").
-nodo(rio_luz_extraña, "Una luz extraña parpadea desde debajo del agua.", "luz_extraña.jpg").
+nodo(rio_luz_extrana, "Una luz extraña parpadea desde debajo del agua.", "luz_extraña.jpg").
 nodo(pradera_circulo_piedras, "Un círculo de piedras marca un lugar ceremonial antiguo.", "circulo_piedras.jpg").
 nodo(pradera_pajaros_negros, "Un grupo de pájaros negros revolotea inquieto en el cielo.", "pajaros_negros.jpg").
 nodo(pradera_camino_flores, "Un camino bordeado por flores vibrantes guía hacia adelante.", "camino_flores.jpg").
 nodo(torre_artefacto_magico, "Un artefacto mágico emite un brillo pulsante en una esquina.", "artefacto_magico.jpg").
 nodo(torre_paredes_debilitadas, "Las paredes de la torre parecen tambalearse bajo el peso del tiempo.", "paredes_debilitadas.jpg").
-nodo(torre_hojas_secándose, "Hojas secas cubren el suelo, crujientes bajo tus pies.", "hojas_secas.jpg").
+nodo(torre_hojas_secandose, "Hojas secas cubren el suelo, crujientes bajo tus pies.", "hojas_secas.jpg").
 nodo(cueva_piedra_luminosa, "Una piedra que emite una suave luz azul yace en el suelo.", "piedra_luminosa.jpg").
 nodo(cueva_pasaje_secreto, "Un pasaje secreto se abre al mover una roca suelta.", "pasaje_secreto.jpg").
 nodo(cueva_rama_retumbante, "Un ruido retumbante indica un movimiento profundo dentro de la cueva.", "rama_retumbante.jpg").
@@ -667,11 +667,11 @@ decision(desierto_campamento_abandonado, avanzar, desierto_tempestad_arena).
 decision(cueva_cristales_resplandecientes, observar, cueva_pinturas_ancestrales).
 decision(cueva_cristales_resplandecientes, seguir, cueva_rio_subterraneo).
 decision(rio_puente_roto, cruzar, rio_pesca_abandonada).
-decision(rio_puente_roto, investigar, rio_luz_extraña).
+decision(rio_puente_roto, investigar, rio_luz_extrana).
 decision(pradera_circulo_piedras, observar, pradera_pajaros_negros).
 decision(pradera_circulo_piedras, seguir, pradera_camino_flores).
 decision(torre_artefacto_magico, examinar, torre_paredes_debilitadas).
-decision(torre_artefacto_magico, investigar, torre_hojas_secándose).
+decision(torre_artefacto_magico, investigar, torre_hojas_secandose).
 decision(cueva_piedra_luminosa, tomar, cueva_pasaje_secreto).
 decision(cueva_piedra_luminosa, golpear, cueva_rama_retumbante).
 decision(templo_puerta_oscura, entrar, templo_fuente_sagrada).
