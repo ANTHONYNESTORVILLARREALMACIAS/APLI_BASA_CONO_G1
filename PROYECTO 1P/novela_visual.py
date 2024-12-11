@@ -11,24 +11,47 @@ prolog.consult("novela.pl")
 root = tk.Tk()
 root.title("Novela Visual")
 root.geometry("800x600")
+root.config(bg="#2d2d2d")  # Fondo oscuro para contraste
+
+# Colores de la temática
+color_fondo = "#3e3e3e"
+color_texto = "#f5f5f5"
+color_botones = "#f6a261"
+color_boton_hover = "#e85d04"
+color_boton_texto = "#fff"
+color_texto_final = "#2b2b2b"
+color_boton_final = "#ff6f61"
+color_boton_final_hover = "#d84a3e"
+
+# Estilos de fuente
+fuente_titulo = ("Arial", 16, "bold")
+fuente_texto = ("Arial", 14)
+fuente_final = ("Arial", 14, "italic")
 
 # Widgets principales
-frame_texto = tk.Frame(root)
-frame_texto.pack(fill=tk.BOTH, expand=True)
+frame_texto = tk.Frame(root, bg=color_fondo)
+frame_texto.pack(fill=tk.BOTH, expand=True, padx=20, pady=20)
 
-frame_botones = tk.Frame(root)
-frame_botones.pack(side=tk.BOTTOM)
+frame_botones = tk.Frame(root, bg=color_fondo)
+frame_botones.pack(side=tk.BOTTOM, pady=10)
 
-texto_label = tk.Label(frame_texto, text="", wraplength=700, font=("Arial", 14), justify="left")
+texto_label = tk.Label(frame_texto, text="", wraplength=700, font=fuente_texto, justify="left", bg=color_fondo, fg=color_texto)
 texto_label.pack(pady=20)
 
-imagen_label = tk.Label(frame_texto)
+imagen_label = tk.Label(frame_texto, bg=color_fondo)
 imagen_label.pack()
 
 # Variables para el estado actual y el historial
 estado_actual = "inicio"
 historial_estados = []  # Para manejar el retroceso
 
+# Agregar efectos de desvanecimiento en las imágenes
+def fade_in_image(label, image, duration=500):
+    """Desvanece la imagen con un efecto dinámico"""
+    label.config(image=image)
+    label.image = image
+    label.after(0, lambda: label.lower())
+    label.after(duration, lambda: label.lift())
 
 def obtener_opciones(estado):
     """
@@ -84,8 +107,7 @@ def actualizar_interfaz(texto, imagen):
             img = Image.open(imagen)
             img = img.resize((400, 300), Image.Resampling.LANCZOS)
             img = ImageTk.PhotoImage(img)
-            imagen_label.config(image=img)
-            imagen_label.image = img
+            fade_in_image(imagen_label, img)  # Desvanecer la imagen
         else:
             # Mostrar un marcador de posición si la imagen no existe
             texto_label.config(text=f"{texto}\n\n[Imagen no disponible: {imagen}]")
@@ -103,13 +125,21 @@ def actualizar_interfaz(texto, imagen):
 
     opciones = obtener_opciones(estado_actual)
     for opcion in opciones:
-        btn = tk.Button(frame_botones, text=opcion.capitalize(), command=lambda o=opcion: realizar_decision(o))
+        btn = tk.Button(frame_botones, text=opcion.capitalize(), command=lambda o=opcion: realizar_decision(o),
+                        bg=color_botones, fg=color_boton_texto, font=fuente_titulo, relief="flat", bd=0,
+                        padx=15, pady=8)
         btn.pack(side=tk.LEFT, padx=10)
+        btn.bind("<Enter>", lambda event, button=btn: button.config(bg=color_boton_hover))
+        btn.bind("<Leave>", lambda event, button=btn: button.config(bg=color_botones))
 
     # Botón para regresar
     if historial_estados:
-        btn_regresar = tk.Button(frame_botones, text="Regresar", command=lambda: realizar_decision("regresar"))
+        btn_regresar = tk.Button(frame_botones, text="Regresar", command=lambda: realizar_decision("regresar"),
+                                 bg=color_botones, fg=color_boton_texto, font=fuente_titulo, relief="flat", bd=0,
+                                 padx=15, pady=8)
         btn_regresar.pack(side=tk.LEFT, padx=10)
+        btn_regresar.bind("<Enter>", lambda event, button=btn_regresar: button.config(bg=color_boton_hover))
+        btn_regresar.bind("<Leave>", lambda event, button=btn_regresar: button.config(bg=color_botones))
 
 
 def mostrar_opciones_finales():
@@ -120,12 +150,19 @@ def mostrar_opciones_finales():
         widget.destroy()
 
     # Botón para volver a jugar
-    btn_volver = tk.Button(frame_botones, text="Volver a jugar", command=lambda: reiniciar_juego())
+    btn_volver = tk.Button(frame_botones, text="Volver a jugar", command=lambda: reiniciar_juego(),
+                           bg=color_boton_final, fg=color_boton_texto, font=fuente_final, relief="flat", bd=0,
+                           padx=15, pady=8)
     btn_volver.pack(side=tk.LEFT, padx=10)
+    btn_volver.bind("<Enter>", lambda event, button=btn_volver: button.config(bg=color_boton_final_hover))
+    btn_volver.bind("<Leave>", lambda event, button=btn_volver: button.config(bg=color_boton_final))
 
     # Botón para cerrar el juego
-    btn_cerrar = tk.Button(frame_botones, text="Cerrar", command=root.quit)
+    btn_cerrar = tk.Button(frame_botones, text="Cerrar", command=root.quit, bg=color_boton_final, fg=color_boton_texto,
+                           font=fuente_final, relief="flat", bd=0, padx=15, pady=8)
     btn_cerrar.pack(side=tk.LEFT, padx=10)
+    btn_cerrar.bind("<Enter>", lambda event, button=btn_cerrar: button.config(bg=color_boton_final_hover))
+    btn_cerrar.bind("<Leave>", lambda event, button=btn_cerrar: button.config(bg=color_boton_final))
 
 
 def reiniciar_juego():
