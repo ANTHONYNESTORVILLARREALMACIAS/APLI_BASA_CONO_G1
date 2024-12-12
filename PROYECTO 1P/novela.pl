@@ -43,12 +43,12 @@ nodo(templo_trampa, "Te adentras en el templo y accidentalmente activas una tram
 nodo(templo_escapa, "Tras resolver el acertijo, un pasaje se abre y te lleva a una sala secreta llena de inscripciones antiguas.", "sala_secreta.jpg").
 nodo(templo_captura, "No logras resolver el acertijo y las paredes comienzan a cerrarse. La trampa se activa. Fin tragico.", "capturado.jpg").
 nodo(desfiladero_cueva, "En tu camino por el desfiladero, descubres una cueva oculta. Dentro, un artefacto brillante emite un zumbido. Lo tocas o sigues explorando?", "cueva.jpg").
-nodo(artefacto_toca, "Al tocar el artefacto, sientes una energia que recorre tu cuerpo. Ganas un poder especial que te permitira enfrentar desafios futuros.", "poder_magico.avif").
+nodo(artefacto_toca, "Al tocar el artefacto, sientes una energia que recorre tu cuerpo. Ganas un poder especial que te permitira enfrentar desafios futuros.", "poder_magico.jpg").
 nodo(artefacto_deja, "Ignoras el artefacto y sigues caminando. Encuentras una salida al otro lado del desfiladero con una vista panoramica.", "salida.jpg").
 nodo(portal_misterioso, "El portal te lleva a una dimension surrealista donde el tiempo parece distorsionado y criaturas extrañas te observan. Luchas contra ellas o buscas a alguien que te ayude?", "dimension.jpg").
 nodo(dimension_lucha, "Te enfrentas a las criaturas y, tras una intensa batalla, encuentras una gema luminosa que abre un portal de regreso a tu mundo. ¡Felicidades!", "gema.jpg").
 nodo(dimension_ayuda, "Encuentras un grupo de aldeanos que te ofrecen refugio y te ensenan como sobrevivir en esta dimension desconocida.", "aldea.jpg").
-nodo(pueblo_aventura, "En el pueblo, un misterioso viajero te ofrece un mapa que conduce a una isla remota. Aceptas su invitacion o decides quedarte explorando el pueblo?", "viajero.avif").
+nodo(pueblo_aventura, "En el pueblo, un misterioso viajero te ofrece un mapa que conduce a una isla remota. Aceptas su invitacion o decides quedarte explorando el pueblo?", "viajero.jpg").
 nodo(isla_explora, "Sigues al viajero y descubres una isla llena de secretos, con ruinas antiguas y una civilizacion perdida que custodia un poder ancestral. ¡Felicidades!", "isla.jpg").
 nodo(isla_queda, "Decides quedarte en el pueblo, disfrutando de la compania de sus habitantes y viviendo una vida tranquila y llena de paz.", "vida_tranquila.jpg").
 nodo(bosque_susurros, "Sigues un sendero que parece murmurar tu nombre. Los arboles estan cubiertos de inscripciones brillantes. Quieres descifrarlas o ignorarlas?", "bosque_susurros.jpg").
